@@ -1,0 +1,142 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<script src="{% static 'js/jquery-3.6.1.min.js'%}"></script>
+<script>
+    $(document).ready(function(){
+    $("#btne").click(function(){
+    $(".uform").slideToggle(1000)
+    })
+    })
+</script>
+{% if not request.session.userid %}
+<script>
+     alert('You have login first..')
+     location.href="/user/signin/"
+     </script>
+{%endif%}
+<style>
+    .btna
+    {
+    min-height:50px;
+    width:300px;
+    }
+    .btnb
+    {
+    min-height:100px;
+    width:300px;
+    }
+    .uform
+    {
+    display:none;
+    }
+</style>
+<div class="fs-2 text-center"><u>My<b class="text-ocolor"> </u>Profile </b>
+    <i class="fa-solid fa-id-card text-ocolor"></i></div>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8 py-5">
+        <div class="row">
+        <!--start card-->
+            {% for x in mdata %}
+        <div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4 p-3">
+      <img src="/{{x.ppic}}"
+           style="height:250px;" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{x.name}}</h5>
+        <p class="card-text">
+            <b>Mobile :</b>{{x.mobile}}<br/>
+            <b>Email :</b>{{x.email}}<br/>
+            <b>Password :</b>{{x.passwd}}<br/>
+            <b>Address :</b>{{x.address}}<br/>
+            <a href="#" id="btne"class="btn bg-ocolor float-end">Edit Profile</a>
+
+        </p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+  </div>
+</div>
+            {% endfor %}
+        <!-- end card-->
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+<!--form-->
+
+<div class="row ps-3">
+     <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 uform py-4  bg-light"style="width:670px;border-radius:20px;border:1px solid black;">
+            <center><h class="fs-3">Edit Yor Profile...!</h></center>
+            <HR/>
+            <form method="post"enctype="multipart/form-data">
+                {% csrf_token %}
+            <div class="row px-3"style="padding-top:10px;">
+
+                <div class="col-sm-6 btna">
+                    <h class="fs-5"> User Name :</h>
+                    <input type="text" required placeholder="Enter Your Name.." class="form-control my-3 "required name="name">
+                </div>
+                    <div class="col-sm-6 btna">
+                             <h class="fs-5"> Contact No :</h>
+                    <input type="number" required placeholder="Enter Your Mobile Number.." class="form-control my-3 "required name="mob">
+                    </div>
+            </div>
+                <div class="row px-3"style="padding-top:10px;">
+                    <div class="col-sm-6 btna">
+                             <h class="fs-5"> Upload Picture :</h>
+                    <input type="file" class="form-control my-3 "required name="pic">
+                    </div>
+                        <div class="col-sm-6">
+                            <h class="fs-5"> Password :</h>
+                    <input type="password" required placeholder="Enter Your Password.." class="form-control my-3 "required name="passwd">
+                    </div>
+                    </div>
+                        <div class="row"style="padding-left:10px;">
+                        <div class="col-sm-12">
+                            <h class="fs-5"> Address :</h>
+                    <textarea class="form-control txta" required name="address" placeholder="Enter Your Address.."></textarea>
+                        </div>
+                        </div>
+                      <center><input type="submit"style="width:300px;min-height:50px;border-radius:20px;text-align:center;" class="my-3 btn btn-outline bg-bcolor text-ocolor"value="Register Here"/><br/>
+                          Forgot <a href="#"style="text-decoration:none;">Password..?</a>&nbsp;Login <a href="/user/signin/"style="text-decoration:none;">Here..!</a>
+                      </center>
+
+
+            </form>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>
+
+<!--end form--->
+<div class="container-fluid ourservice"style="min-height:270px;">
+        <div class="row">
+        <div class="col-sm-12 text-center"><h class="fs-3 text-dark"><u>Our Services </u><h class="text-ocolor">For Coustmer
+            <i class="fa-brands fa-servicestack fs-3"></i></h></h></div></div>
+        <div class="row box pt-4">
+        <div class="col-sm-4 a py-5 text-center">
+            <i class="fa-sharp fa-solid fa-truck fs-2 text-ocolor"></i>
+            <b class="fs-3"> &nbsp;FREE SHIPPING</b><br/>
+            <p class="fs-5">for all order upto <i class="fa-solid fa-indian-rupee-sign"></i> 2000</p>
+        </div>
+        <div class="col-sm-4 a py-5 text-center">
+            <i class="fa-solid fa-clock fs-2 text-ocolor"></i>
+            <b class="fs-3">&nbsp;DELIVERY ON TIME</b><br/>
+            <p class="fs-5">Fastest Delivery at Doorstep</p>
+        </div>
+        <div class="col-sm-4 a py-5 text-center">
+            <i class="fa-solid fa-lock fs-2 text-ocolor"></i>
+            <b class="fs-3">&nbsp;SECURE PAYMENT</b><br/>
+            <p class="fs-5">100% secure payment</p>
+        </div>
+        </div>
+    </div>
+{% endblock %}
+

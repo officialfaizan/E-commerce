@@ -1,0 +1,110 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<style>
+    .bigsale
+      {
+      background:url('{%static "images/sale5.jpg"%}');
+       background-size:100% 100%;
+       min-height:300px;
+       padding-top:150px;
+      }
+</style>
+<div class="fs-2 text-center"><u>Women's <b class="text-ocolor"> </u>Product </b>
+    <i class="fa-solid fa-cart-shopping text-ocolor"></i></div>
+<div class="row">
+    <div class="col-sm-8">
+        <div class="row">
+        <!--start product-->
+           {% for a in data %}
+
+    <div class="col-sm-4">
+        <div class="card p-3">
+            <img src="/{{a.ppic}}" style="max-height:200px;" class="img-card-top"/>
+            <div class="card-title">
+                <h5 class="card-title">{{a.pcategory}}</h5>
+            <hr class="devider"/>
+                <b class="btn btn-sm bg-ocolor">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+                </b>
+                <b class="text-danger fs-4"><s>{{a.pprice}}/-</s></b>
+                <b class="text-success fs-4">{{a.dprice}}/-</b><br/><br/>
+                <b class="btn btn-sm bg-ocolor">{{a.psize}}</b>
+                <div style="height:20px;width:20px;background:{{a.pcolor}};border-radius:2px;" class="float-end"> </div>
+                <hr class="devider"/>
+               <span class="text-muted fs-5">{{a.pdel}}</span><br/>
+                <a href="/user/viewproduct?msg={{a.id}}" class="btn btn-sm bg-ocolor"> Order Now</a>
+            <a href="#" class="btn btn-sm bg-ocolor"> Cart
+            <i class="fa-solid fa-cart-plus"></i>
+            </a>
+                <span class="text-muted"><br/><b>Date :</b> :{{a.pdate}}
+
+                </span><br/>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+        <!--end product-->
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <ul class="list-group">
+            <li class="list-group-time  fs-4 text-light bg-bcolor text-center text-ligth fw-bold">
+                Product Category</li>
+            {% for x in cats %}
+            <li class="list-group-item">
+            <!--Start card-->
+           <div class="card  w-100">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="/{{x.CPic}}" style="max-height:70px;" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+          <a href="/user/womens?msg={{x.id}}" class="text-dark" style="text-decoration:none;">
+              <h5 class="card-title">{{x.Name}}</h5></a>
+      </div>
+    </div>
+  </div>
+</div>
+                <!--end card-->
+
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="fs-2 Bigsale text-center"><b><u> Big</u> <b class="text-ocolor">Sale</b>
+    <i class="fa-solid fa-tags text-ocolor"></i></b>
+    <div class="row  mt-3">
+        <div class="col-sm-6 bigsale">
+        </div>
+        <div class="col-sm-6 bg-secondary text-center py-3">
+            <h1 class=" text-center text-ocolor "> 50-70% less in all items</h1>
+            <p style="font-size:17px;">New arrivals,new collection.<br/>Flat 50-70% off in every item you by from FavCart India.<br/>Offer valid for days only.<br/>Hurry Up !</p>
+            <a href="#" style="text-decoration:none;"><input type="button" value="Shop Now " class="btn  bg-bcolor btn-lg text-ocolor"/></a>
+        </div>
+    </div>
+<div class="container-fluid ourservice mb-2"style="min-height:270px;">
+        <div class="row">
+        <div class="col-sm-12 text-center"><h class="fs-3 text-dark"><u>Our Services </u><h class="text-ocolor">For Coustmer
+            <i class="fa-brands fa-servicestack fs-3"></i></h></h></div></div>
+        <div class="row box pt-4">
+        <div class="col-sm-4 a py-5 text-center">
+            <i class="fa-sharp fa-solid fa-truck fs-2 text-ocolor"></i>
+            <b class="fs-3"> &nbsp;FREE SHIPPING</b><br/>
+            <p class="fs-5">for all order upto <i class="fa-solid fa-indian-rupee-sign"></i> 2000</p>
+        </div>
+        <div class="col-sm-4 a py-5 text-center">
+            <i class="fa-solid fa-clock fs-2 text-ocolor"></i>
+            <b class="fs-3">&nbsp;DELIVERY ON TIME</b><br/>
+            <p class="fs-5">Fastest Delivery at Doorstep</p>
+        </div>
+        <div class="col-sm-4 a py-5 text-center">
+            <i class="fa-solid fa-lock fs-2 text-ocolor"></i>
+            <b class="fs-3">&nbsp;SECURE PAYMENT</b><br/>
+            <p class="fs-5">100% secure payment</p>
+        </div>
+        </div>
+    </div>
+{% endblock %}

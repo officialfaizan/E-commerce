@@ -1,0 +1,116 @@
+{% extends 'base.html'%}
+{% block content %}
+<style>
+    .hgt
+    {
+    min-height:400px;
+    }
+.ebtn1
+{
+background:#26A69A;
+}
+.eback
+{
+background:#efefef;
+border:1px solid #efefef;
+}
+.contrans:hover
+{
+color:#d0ff14;
+transform:scale(-10px)
+}
+.txta
+{
+height:80px;
+}
+
+</style>
+<div class="fs-2 text-center"><u>Contact <b class="text-ocolor"> With </u>Us</b>
+    <i class="fa-solid fa-location-dot text-ocolor"></i></div>
+<center><p>you may contact us contact number filling in this form any time you need professional <br/>support or have any question.</p></center>
+<div class="container-fluid ">
+   <div class="row bg-light p-5">
+       <div class="col-sm-7 hgt ps-3 pt-3"style="background:#e8e8e8;">
+           {% if m %}
+           <div class="alert alert-success">Your Message Send Successfuly</div>
+           {% endif %}
+           <form method="post">
+               {% csrf_token %}
+           <h3> <b class="text-ocolor"><u style="color:#26A69A;"> Send</b> </u>Your Message</h3>
+           <div class="row mt-3">
+               <div class="col-sm-6">
+                   <i class="fa-solid fa-user"></i>
+                  Your Name:<input type="text" required name="name" class="form-control" placeholder="Enter Your Name*"/>
+               </div>
+               <div class="col-sm-6">
+                   <i class="fa-solid fa-address-card"></i>
+                   Your Contact: <input type="number" name="mob" required class="form-control" placeholder="Enter Your Contact Number*"/>
+               </div>
+           </div>
+           <div class="row mt-3">
+               <div class="col-sm-12">
+                   <i class="fa-solid fa-envelope"></i>
+                   Your Email:<input type="email"required name="email" placeholder="Enter your Email*" class="form-control"/>
+               </div>
+           </div>
+           <div class="row mt-3">
+               <div class="col-sm-12">
+                   <i class="fa-solid fa-message"></i>
+                   Your Message:<textarea class="form-control txta"name="msg" placeholder="Message.."></textarea>
+               </div>
+           </div>
+           <input type="submit" required  class="btn btn-outline ebtn1 my-4" value="Send Message "/>
+           </form>
+       </div>
+       <div class="col-sm-5 hgt eback">
+           <h3 class="row mt-4 ps-4 "> <b class="text-ocolor"><u style="color:black;">Contact </u>Info</b></h3>
+           <div class="row ps-5">
+               <div class="col-sm-2 text-sm-end ">
+                   <a href="#"> <i class="fa-solid fa-location-dot text-ocolor fs-2"></i></a>
+               </div>
+               <div class="col-sm-10 text-start">
+                   <b class="text-ocolor fs-5">Office Address</b><br/>
+                   <p>
+                       Plot no. 44 Behind Petrol Pump<br/> Tedhi Pulia Ring Road Sector 5<br/>
+                       Vikas Nagar Lucknow <br/>Utterpradesh 226022
+                   </p>
+               </div>
+       </div>
+           <div class="row ps-5">
+               <div class="col-sm-2 text-sm-end"><a href="#"> <i class="fa-solid fa-phone text-ocolor fs-2"></i></a></div>
+                   <div class="col-sm-10">
+                       <b class="text-ocolor fs-5">Call US</b></br>
+                        +91 7897825098<br/> +91 9336361853
+                   </div>
+               </div>
+               <div class="row ps-5 mb-4">
+                   <div class="col-sm-2 text-sm-end"><a href="#"><i class="fa-solid fa-envelope text-ocolor fs-2"></i></a>  </div>
+                   <div class="col-sm-10">
+                       <b class="text-ocolor fs-5 ">Mail Us </b>
+                       <p>ahmadfaizan00559@gmail.com<br/>roobinshaikh510@gmail.com</p>
+                   </div>
+               </div>
+           </div>
+   </div>
+</div>
+  <div class="container-fluid product"style="background:white;">
+      <div class="text-center py-4 fs-3">
+          <b class="text-dark"><u>Find Us  On </u><k class="text-ocolor">Google Map</k></b>
+          <i class="fa-solid fa-location-dot text-ocolor"></i><br/>
+          <center>
+      <p style="font-size:16px; color:#818887;">View Us On Google Map easily...!</p>
+          </center>
+      </div>
+      <div class="row">
+          <div class="col-sm-12 mb-2"style="min-height:400px;background:#e8e8e8;">
+              <!--Start google map-->
+                <div id="gmap">
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14318.061331199218!2d81.2628953!3d26.212440100000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1658943783355!5m2!1sen!2sin"
+width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <!--end map-->
+
+          </div>
+      </div>
+    </div>
+{% endblock %}

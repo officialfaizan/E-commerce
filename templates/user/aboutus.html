@@ -1,0 +1,105 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}
+About Us
+{% endblock %}
+{% block content %}
+<style>
+    .img
+    {
+    background:url("{% static 'images/gs2.jpg'%}");
+    background-size:100% 100%;
+
+    }
+    .back
+    {
+     background:url("{% static 'images/ba.jpg'%}");
+    background-size:100% 100%;
+    background-attachment:fixed;
+    }
+    .bigsale
+      {
+      background:url('{%static "images/sale5.jpg"%}');
+       background-size:100% 100%;
+       min-height:300px;
+       padding-top:150px;
+      }
+</style>
+<div class="fs-2 text-center"><u>About  </u><b class="text-ocolor"> Us  </b>
+    <i class="fa-solid fa-circle-info text-ocolor"></i>
+<p style="font-size:17px;"class="py-3">Welcome to FavCart India...There are multiple reason to choose us for your multiple purpose related to your Fashion Product.<br/>
+And this website will fully trusted.So Visit Now...
+</p></div>
+<div class="container-fluids back">
+<div class="row">
+
+        <div class="col-sm-6 img"style="height:400px;text-align:justify;"></div>
+        <div class="col-sm-6"style="background:#e8e8e8;height:400px;text-align:justify;">
+            <h3 class="fs-2 m-3 ">About Our Website..!</h3>
+            <p style="text-align:justify;">We all love quotes, whether they be beach quotes or travel quotes, love quotes, cute quotes, we can’t get enough of these words of inspiration to share with our friends, family, social updates, or just to provide us with a little motivation.
+Fashion quotes provide us with a different perspective and I love reading the inner thoughts of the fashion greats, past and present.
+We have a vast inventory of products ranging from apparel to cosmetics to home utility and kitchen products and more. With over 50 lakh products and 650+ product categories, Meesho is sure to have everything you need. In our latest collections, you will find all the popular items at an affordable price, so you can be confident you're getting the best deal. Whether you're in the market for new clothes, accessories, or just some daily-use items for home, Meesho has what you need.!</p>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-sm-12 fs-2 text-center pt-3 ">We <b class="txt-color"> believe..! </b><br/>
+            <p class="fs-5 px-5">We Believe to make it industry to make reliable for people</p>
+            <center><hr style="height:3px;width:100px; background:red;" /></center>
+            </div>
+        <div class="row p-2">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 p-5"style="background:#e8e8e8;">
+                <h3 class="pt-3" >Our Vision..!</h3><br/>
+                <p style="text-align:justify;">There are many benefits of shopping online.
+                    You can take your time and look at different options to find exactly what you want.
+                    It's easy to compare prices online and find exactly what you are looking for.
+                    And now with Meesho, you can shop for anything you want at the lowest prices in the market.
+                    Even if you want to shop for cool gifts for your friends and family, there are many options that you can find on the Internet.</p>
+
+                <h3 class="pt-3">Our Mission..!</h3><br/>
+                <p style="text-align:justify;">Every successful clothing and accessory business whether brick-and-mortar or online needs a short, sweet mission statement. Your mission and vision statement tell the world what sets you apart from other manufacturers. Are you hand-crafted, the most unique, or the least expensive. What makes a good business mission statement involves thinking about how you tell people your who, what,
+                    why for the clothing and accessories you create.</p>
+
+                <h3 class="pt-3">Our Services..!</h3><br/>
+                <p style="text-align:justify;">Use customer service messages as a way to improve customer experience or to maintain your standards.
+                    These messages are meant to keep customers informed of what’s going on so that they hear it from you first. This also minimizes the need for customers to call into support to ask the same questions repeatedly, which ties up the customer support team’s time instead of allowing them to engage in more value-added tasks, like processing orders or
+                    managing comments received through social channels.</p>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+</div>
+<div class="fs-2 Bigsale text-center"><b><u> Big</u> <b class="text-ocolor">Sale</b>
+    <i class="fa-solid fa-tags text-ocolor"></i></b>
+    <div class="row  mt-3">
+        <div class="col-sm-6 bigsale">
+        </div>
+        <div class="col-sm-6 bg-secondary text-center py-3">
+            <h1 class=" text-center text-ocolor "> 50-70% less in all items</h1>
+            <p style="font-size:17px;">New arrivals,new collection.<br/>Flat 50-70% off in every item you by from FavCart India.<br/>Offer valid for days only.<br/>Hurry Up !</p>
+            <a href="#" style="text-decoration:none;"><input type="button" value="Shop Now " class="btn  bg-bcolor btn-lg text-ocolor"/></a>
+        </div>
+    </div>
+<div class="container-fluid ourservice"style="min-height:270px;">
+        <div class="row">
+        <div class="col-sm-12 text-center"><h class="fs-3 text-dark"><u>Our Services </u><h class="text-ocolor">For Coustmer
+            <i class="fa-brands fa-servicestack fs-3"></i></h></h></div></div>
+        <div class="row box pt-4">
+        <div class="col-sm-4 a py-5 text-center">
+            <i class="fa-sharp fa-solid fa-truck fs-2 text-ocolor"></i>
+            <b class="fs-3"> &nbsp;FREE SHIPPING</b><br/>
+            <p class="fs-5">for all order upto <i class="fa-solid fa-indian-rupee-sign"></i> 2000</p>
+        </div>
+        <div class="col-sm-4 a py-5 text-center">
+            <i class="fa-solid fa-clock fs-2 text-ocolor"></i>
+            <b class="fs-3">&nbsp;DELIVERY ON TIME</b><br/>
+            <p class="fs-5">Fastest Delivery at Doorstep</p>
+        </div>
+        <div class="col-sm-4 a py-5 text-center">
+            <i class="fa-solid fa-lock fs-2 text-ocolor"></i>
+            <b class="fs-3">&nbsp;SECURE PAYMENT</b><br/>
+            <p class="fs-5">100% secure payment</p>
+        </div>
+        </div>
+    </div>
+{% endblock %}

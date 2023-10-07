@@ -1,0 +1,87 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}
+Sign Up
+{% endblock %}
+{% block content %}
+<style>
+    .back
+    {
+    background:url("{% static 'images/r1.jpg'%}");
+    background-size:100% 100%;
+    margin:auto;
+    margin-bottom:10px;
+    min-height:700px;
+    background-attachment:fixed;
+    }
+    .btna
+    {
+    min-height:50px;
+    width:300px;
+    }
+    .btnb
+    {
+    min-height:100px;
+    width:300px;
+    }
+
+</style>
+<div class="fs-2 text-center"><b><u> SignUp</u> <b class="text-ocolor">Form</b>
+    <i class="fa-solid fa-user-plus text-ocolor"></i></b>
+<p style="font-size:18px;">If Are You New? You will go and Create Your Account And Enjoy For Best Collection In<br/>
+    FavCart India. Visit Now...
+</p>
+</div>
+<div class="row py-5 ps-3 back">
+     <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 py-4  bg-light"style="width:670px;border-radius:20px;border:1px solid black;">
+            <center><h class="fs-3">Create Yor Account...!</h></center>
+            <HR/>
+            <form method="post"enctype="multipart/form-data">
+                {% csrf_token %}
+            <div class="row px-3"style="padding-top:10px;">
+
+                <div class="col-sm-6 btna">
+                    <h class="fs-5"> User Name :</h>
+                    <input type="text" required placeholder="Enter Your Name.." class="form-control my-3 " name="name">
+                </div>
+                <div class="col-sm-6 btna">
+                         <h class="fs-5"> Your Email :</h>
+                    <input type="email" required placeholder="Enter Your Email.." class="form-control my-3 "required name="email">
+                </div>
+                <div class="row"style="padding-left:15px;">
+                    <div class="col-sm-6 btna">
+                             <h class="fs-5"> Contact No :</h>
+                    <input type="number" required placeholder="Enter Your Mobile Number.." class="form-control my-3 "required name="mob">
+                    </div>
+                    <div class="col-sm-6 btna">
+                             <h class="fs-5"> Upload Picture :</h>
+                    <input type="file" class="form-control my-3 "required name="pic">
+                    </div>
+                    <div class="row"style="padding-left:15px;">
+                        <div class="col-sm-12">
+                            <h class="fs-5"> Password :</h>
+                    <input type="password" required placeholder="Enter Your Password.." class="form-control my-3 "required name="passwd">
+                    </div>
+                    </div>
+                        <div class="row">
+                        <div class="col-sm-12">
+                            <h class="fs-5"> Address :</h>
+                    <textarea class="form-control txta" required name="address" placeholder="Enter Your Address.."></textarea>
+                        </div>
+                        </div>
+                      <center><input type="submit"style="width:300px;min-height:50px;border-radius:20px;text-align:center;" class="my-3 btn btn-outline bg-bcolor text-ocolor"value="Register Here"/><br/>
+                          Forgot <a href="#"style="text-decoration:none;">Password..?</a>&nbsp;Login <a href="/user/signin/"style="text-decoration:none;">Here..!</a>
+                      </center>
+                </div>
+
+                </div>
+            </form>
+        </div>
+
+        <div class="col-sm-3"></div>
+    </div>
+</div>
+
+{% endblock %}
